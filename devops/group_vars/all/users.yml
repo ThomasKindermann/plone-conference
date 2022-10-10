@@ -1,12 +1,14 @@
 ---
 users:
-
-  'plone':
-    name: 'Plone installation'
-    email: 'kindermann@kitconcept.com'
-    public_keys: []
+  "plone":
+    name: "Plone installation"
+    email: "kindermann@kitconcept.com"
+    public_keys:
+      [
+        ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP+MIR1I4ZrTteiU2KCQQP/8xhTPJDCRxZ5yCwOmRTYx kindermann@kitconcept.com,
+      ]
     state: present
-    shell: '/bin/bash'
+    shell: "/bin/bash"
     groups:
-      - 'docker'
-      - 'plone'
+      - "docker"
+      - "plone"
