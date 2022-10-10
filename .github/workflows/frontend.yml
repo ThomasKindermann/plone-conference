@@ -87,6 +87,9 @@ jobs:
       - name: Install packages
         run: yarn install --frozen-lockfile
 
+      # - name: Test i18n sync
+      #   run: make i18n-ci
+
   unit:
     runs-on: ubuntu-latest
     defaults:
@@ -132,9 +135,9 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: |
-            ghcr.io/ThomasKindermann/plone-conference-frontend
+            ghcr.io/collective/plone-conference-frontend
           labels: |
-            org.label-schema.docker.cmd=docker run -d -p 3000:3000 ghcr.io/ThomasKindermann/plone-conference-frontend:latest
+            org.label-schema.docker.cmd=docker run -d -p 3000:3000 ghcr.io/collective/plone-conference-frontend:latest
           tags: |
             type=ref,event=branch
             type=sha
