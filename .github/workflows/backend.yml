@@ -5,9 +5,7 @@ on:
     paths:
       - "backend/**"
 
-
 jobs:
-
   black:
     runs-on: ubuntu-latest
     steps:
@@ -17,8 +15,8 @@ jobs:
       - name: Run check
         uses: plone/code-analysis-action@v2
         with:
-          base_dir: 'backend'
-          check: 'black'
+          base_dir: "backend"
+          check: "black"
 
   flake8:
     runs-on: ubuntu-latest
@@ -29,8 +27,8 @@ jobs:
       - name: Run check
         uses: plone/code-analysis-action@v2
         with:
-          base_dir: 'backend'
-          check: 'flake8'
+          base_dir: "backend"
+          check: "flake8"
 
   isort:
     runs-on: ubuntu-latest
@@ -41,8 +39,8 @@ jobs:
       - name: Run check
         uses: plone/code-analysis-action@v2
         with:
-          base_dir: 'backend'
-          check: 'isort'
+          base_dir: "backend"
+          check: "isort"
 
   zpretty:
     runs-on: ubuntu-latest
@@ -53,8 +51,8 @@ jobs:
       - name: Run check
         uses: plone/code-analysis-action@v2
         with:
-          base_dir: 'backend'
-          check: 'zpretty'
+          base_dir: "backend"
+          check: "zpretty"
 
   tests:
     runs-on: ubuntu-latest
@@ -93,7 +91,6 @@ jobs:
     needs: [black, flake8, isort, zpretty, tests]
 
     steps:
-
       - name: Checkout
         uses: actions/checkout@v2
 
@@ -102,9 +99,9 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: |
-            ghcr.io/collective/plone-conference-backend
+            ghcr.io/ThomasKindermann/plone-conference-backend
           labels: |
-            org.label-schema.docker.cmd=docker run -d -p 8080:8080 ghcr.io/collective/plone-conference-backend:latest
+            org.label-schema.docker.cmd=docker run -d -p 8080:8080 ghcr.io/ThomasKindermann/plone-conference-backend:latest
           tags: |
             type=ref,event=branch
             type=sha

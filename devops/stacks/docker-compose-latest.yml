@@ -1,6 +1,5 @@
 version: "3"
 services:
-
   webserver:
     image: nginx
     volumes:
@@ -9,19 +8,19 @@ services:
       - backend
       - frontend
     ports:
-    - "80:80"
+      - "80:80"
 
   frontend:
-    image: ghcr.io/collective/plone-conference-frontend:latest
+    image: ghcr.io/ThomasKindermann/plone-conference-frontend:latest
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
     ports:
-    - "3000:3000"
+      - "3000:3000"
     depends_on:
       - backend
 
   backend:
-    image: ghcr.io/collective/plone-conference-backend:latest
+    image: ghcr.io/ThomasKindermann/plone-conference-backend:latest
     environment:
       SITE: Plone
       ADDITIONAL_PROFILES: "plone_conference:default,plone_conference:initial"
@@ -36,7 +35,7 @@ services:
       POSTGRES_PASSWORD: plone
       POSTGRES_DB: plone
     volumes:
-    - data:/var/lib/postgresql/data
+      - data:/var/lib/postgresql/data
 
 volumes:
   data: {}
