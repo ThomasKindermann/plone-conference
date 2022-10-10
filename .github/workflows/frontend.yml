@@ -135,9 +135,9 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: |
-            ghcr.io/collective/plone-conference-frontend
+            ghcr.io/ThomasKindermann/plone-conference-frontend
           labels: |
-            org.label-schema.docker.cmd=docker run -d -p 3000:3000 ghcr.io/collective/plone-conference-frontend:latest
+            org.label-schema.docker.cmd=docker run -d -p 3000:3000 ghcr.io/ThomasKindermann/plone-conference-frontend:latest
           tags: |
             type=ref,event=branch
             type=sha

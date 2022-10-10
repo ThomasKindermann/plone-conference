@@ -12,14 +12,14 @@ A new project using Plone 6.
 
 This package contains a simple volto configuration.
 
-Installation
-------------
+## Installation
 
 Install plone_conference with `pip`:
 
 ```shell
 pip install plone_conference
 ```
+
 And to create the Plone site:
 
 ```shell
@@ -28,8 +28,8 @@ make create_site
 
 ## Contribute
 
-- [Issue Tracker](https://github.com/collective/plone-conference/issues)
-- [Source Code](https://github.com/collective/plone-conference/)
+- [Issue Tracker](https://github.com/ThomasKindermann/plone-conference/issues)
+- [Source Code](https://github.com/ThomasKindermann/plone-conference/)
 
 ## License
 
