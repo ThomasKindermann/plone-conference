@@ -1,5 +1,5 @@
 """Upgrades tests for this package."""
-from parameterized import parameterized
+# from parameterized import parameterized
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone_conference.testing import PLONE_CONFERENCE_INTEGRATION_TESTING  # noqa: E501
@@ -28,19 +28,19 @@ class UpgradeStepIntegrationTest(unittest.TestCase):
         steps = [s for s in steps if self._match(s[0], self.src, self.dst)]
         return steps
 
-    # def test_available(self):
-    #     """Test upgrade step is available."""
-    #     if self.src and self.dst:
-    #         steps = self.available_steps()
-    #         self.assertEqual(len(steps), 1)
-
-    # Example of upgrade step test
-    @parameterized.expand(
-        [
-            ("20221010001", "20230229001", 1),
-        ]
-    )
-    def test_available(self, src, dst, expected):
+    def test_available(self):
         """Test upgrade step is available."""
-        steps = self.available_steps(src, dst)
-        self.assertEqual(len(steps), expected)
+        if self.src and self.dst:
+            steps = self.available_steps()
+            self.assertEqual(len(steps), 1)
+
+    # # Example of upgrade step test
+    # @parameterized.expand(
+    #     [
+    #         ("20221010001", "20230229001", 1),
+    #     ]
+    # )
+    # def test_available(self, src, dst, expected):
+    #     """Test upgrade step is available."""
+    #     steps = self.available_steps(src, dst)
+    #     self.assertEqual(len(steps), expected)
