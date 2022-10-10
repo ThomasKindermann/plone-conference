@@ -41,6 +41,9 @@ jobs:
       - name: Lint
         run: yarn run lint:ci
 
+      - name: i18n
+        run: yarn run i18n:ci
+
   prettier:
     runs-on: ubuntu-latest
     defaults:
@@ -83,9 +86,6 @@ jobs:
 
       - name: Install packages
         run: yarn install --frozen-lockfile
-
-      - name: Test i18n sync
-        run: make i18n-ci
 
   unit:
     runs-on: ubuntu-latest
